@@ -55,7 +55,8 @@ class StorageOperationMetrics:
     @contextlib.contextmanager
     def track(self) -> Generator[Self, None, None]:
         """Set this instance as the current metrics context and measure
-        wall-clock duration of the enclosed block."""
+        wall-clock duration of the enclosed block.
+        """
         token = _current_storage_metrics.set(self)
         start = time.monotonic()
         try:
